@@ -57,7 +57,10 @@ exports.create = function(config, serverInfo) {
 			sendHeartbeat(generateHeartbeat(config));
 		}
 		sendHeartbeat(initialHeartbeat, "/init", function(){
-			var interval = setInterval(hbFunc, 90*1000); // Every 90 seconds should be enough.
+                        // To avoid serverlist overload, heartbeat interval 
+                        // set to a random number between 60 and 180 seconds 
+                        var randomDelay = Math.floor(Math.random()*(180-60)+60);
+			var interval = setInterval(hbFunc, randomDelay*1000);
 			hbFunc();
 		});
 	}
