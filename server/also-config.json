@@ -72,7 +72,7 @@
   },
   "updatesURL": "http://asie.pl/launcher",
   "heartbeat": {
-    "url": "http://asie.pl:7253/pfudor",
+    "url": "http://api.asielauncher.com/api.php",
     "enabled": true,
     "sendMods": true,
     "sendPlugins": true,
